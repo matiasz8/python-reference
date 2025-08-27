@@ -2,7 +2,7 @@ Resources:
   BedrockIamPolicy:
     Type: AWS::IAM::Policy
     Properties:
-      PolicyName: ${self:service}${sls:stage}bedrockinvokemodelpolicy
+      PolicyName: bedrockinvokemodelpolicy
       PolicyDocument:
         Version: "2012-10-17"
         Statement:
