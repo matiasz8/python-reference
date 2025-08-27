@@ -12,7 +12,7 @@ body {
     Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
   color: #24292e;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 /* Header */
@@ -37,6 +37,14 @@ body {
 .site-title a {
   color: white;
   text-decoration: none;
+}
+
+.sidebar-menu a {
+  color: #0366d6;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  display: block;
+  transition: color 0.2s;
 }
 
 .site-title a:hover {
@@ -68,7 +76,7 @@ body {
   background: white;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 10%);
 }
 
 /* Sidebar */
@@ -98,14 +106,6 @@ body {
 
 .sidebar-menu li {
   margin-bottom: 0.5rem;
-}
-
-.sidebar-menu a {
-  color: #0366d6;
-  text-decoration: none;
-  padding: 0.25rem 0;
-  display: block;
-  transition: color 0.2s;
 }
 
 .sidebar-menu a:hover {

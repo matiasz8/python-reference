@@ -4,7 +4,8 @@
 
 # Exclude directories and files from linting
 EXCLUDE_PATHS:
-  - examples/green-house-migration
+  # Temporarily excluded for separate handling
+  # - examples/green-house-migration
 
 # Linter configurations
 VALIDATE_ALL_CODEBASE: false

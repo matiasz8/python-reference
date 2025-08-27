@@ -13,21 +13,21 @@ from legacy.greenhouse.batch.users import UsersProcessor
 
 
 def run_all():
-    """run all processors to fetch and save data."""
-    processors = [
-        ApplicationsProcessor(),
-        CandidatesProcessor(),
-        # CustomFieldsProcessor(),
-        JobsProcessor(),
-        MetadataProcessor(),
-        ScheduledInterviewsProcessor(),
-        ScorecardsProcessor(),
-        UsersProcessor(),
-        OffersProcessor(),
-    ]
+   """run all processors to fetch and save data."""
+   processors = [
+       ApplicationsProcessor(),
+       CandidatesProcessor(),
+       # CustomFieldsProcessor(),
+       JobsProcessor(),
+       MetadataProcessor(),
+       ScheduledInterviewsProcessor(),
+       ScorecardsProcessor(),
+       UsersProcessor(),
+       OffersProcessor(),
+   ]
 
-    summary = []
-    for _processor in processors:
-        _data = processor.run()
-        summary.append({"entity": processor.entity, "count": len(data)})
-    return summary
+   summary = []
+   for _processor in processors:
+       _data = processor.run()
+       summary.append({"entity": processor.entity, "count": len(data)})
+   return summary

@@ -5,33 +5,33 @@ from legacy.greenhouse.processor import BaseProcessor
 
 
 class UsersProcessorError(Exception):
-    """Custom exception for UsersProcessor errors."""
+   """Custom exception for UsersProcessor errors."""
 
 
 class UsersProcessor(BaseProcessor):
-    """Processor for fetching user data and related info."""
+   """Processor for fetching user data and related info."""
 
-    entity = "users"
+   entity = "users"
 
-    def fetch(self):
-        users = fetch_all_from_api("users")
+   def fetch(self):
+       users = fetch_all_from_api("users")
 
-        for _user in users:
-            user_id = user.get("id")
-            if not user_id:
-                continue
+       for _user in users:
+           user_id = user.get("id")
+           if not user_id:
+               continue
 
-            try:
-                user["job_permissions"] = gh_get("users/{user_id}/permissions/jobs")
-            except UsersProcessorError as e:
-                print("⚠️ Error getting job permissions for user {user_id}: {e}")
-                user["job_permissions"] = []
+           try:
+               user["job_permissions"] = gh_get("users/{user_id}/permissions/jobs")
+           except UsersProcessorError as e:
+               print("⚠️ Error getting job permissions for user {user_id}: {e}")
+               user["job_permissions"] = []
 
-            try:
-                user["pending_approvals"] = gh_get("users/{user_id}/pending_approvals")
-            except UsersProcessorError as e:
-                # Log the error and set pending_approvals to an empty list
-                print("⚠️ Error getting pending approvals for user {user_id}: {e}")
-                user["pending_approvals"] = []
+           try:
+               user["pending_approvals"] = gh_get("users/{user_id}/pending_approvals")
+           except UsersProcessorError as e:
+               # Log the error and set pending_approvals to an empty list
+               print("⚠️ Error getting pending approvals for user {user_id}: {e}")
+               user["pending_approvals"] = []
 
-        return users
+       return users

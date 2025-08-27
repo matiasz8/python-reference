@@ -1,14 +1,14 @@
 # Single stage Dockerfile for Greenhouse API Proxy
-FROM python:3.12-alpine
+FROM python:3.12.7-alpine
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PYTHONPATH=/app \
-    PORT=8000
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app
+ENV PORT=8000
 
 # Install system dependencies
-RUN apk add --no-cache \
+RUN apk add --no-cache-dir \
     gcc \
     musl-dev \
     libffi-dev \
@@ -17,7 +17,7 @@ RUN apk add --no-cache \
     git
 
 # Install pipenv
-RUN pip install pipenv
+RUN pip install --no-cache-dir pipenv
 
 # Create non-root user
 RUN addgroup -g 1000 appuser && adduser -D -s /bin/sh -u 1000 -G appuser appuser

@@ -70,7 +70,7 @@ create_prospect_pools() {
             "color": "#0076D7"
         }')
 
-    ENGINEERING_POOL_ID=$(echo $ENGINEERING_POOL | jq -r '.id')
+    ENGINEERING_POOL_ID=$(echo "$ENGINEERING_POOL" | jq -r '.id')
     log_success "Pool 'Engineering Prospects' creado con ID: $ENGINEERING_POOL_ID"
 
     # Design Prospects
@@ -84,7 +84,7 @@ create_prospect_pools() {
             "color": "#FF6B35"
         }')
 
-    DESIGN_POOL_ID=$(echo $DESIGN_POOL | jq -r '.id')
+    DESIGN_POOL_ID=$(echo "$DESIGN_POOL" | jq -r '.id')
     log_success "Pool 'Design Prospects' creado con ID: $DESIGN_POOL_ID"
 
     # Product Prospects
@@ -98,13 +98,13 @@ create_prospect_pools() {
             "color": "#4CAF50"
         }')
 
-    PRODUCT_POOL_ID=$(echo $PRODUCT_POOL | jq -r '.id')
+    PRODUCT_POOL_ID=$(echo "$PRODUCT_POOL" | jq -r '.id')
     log_success "Pool 'Product Prospects' creado con ID: $PRODUCT_POOL_ID"
 
     # Guardar IDs para uso posterior
-    echo $ENGINEERING_POOL_ID > /tmp/engineering_pool_id
-    echo $DESIGN_POOL_ID > /tmp/design_pool_id
-    echo $PRODUCT_POOL_ID > /tmp/product_pool_id
+    echo "$ENGINEERING_POOL_ID" > /tmp/engineering_pool_id
+    echo "$DESIGN_POOL_ID" > /tmp/design_pool_id
+    echo "$PRODUCT_POOL_ID" > /tmp/product_pool_id
 }
 
 # Migración de prueba
@@ -115,14 +115,14 @@ migrate_test_sample() {
         -H "Authorization: Token token=$TT_TOKEN" \
         -H "Content-Type: application/json")
 
-    CREATED=$(echo $TEST_RESULT | jq -r '.created')
-    FAILED=$(echo $TEST_RESULT | jq -r '.failed')
+    CREATED=$(echo "$TEST_RESULT" | jq -r '.created')
+    FAILED=$(echo "$TEST_RESULT" | jq -r '.failed')
 
     log_success "Migración de prueba completada: $CREATED creados, $FAILED fallidos"
 
     if [ "$FAILED" -gt 0 ]; then
         log_warning "Algunos candidates fallaron. Revisando errores..."
-        echo $TEST_RESULT | jq -r '.errors[] | "Error: \(.error) - Data: \(.data)"'
+        echo "$TEST_RESULT" | jq -r '.errors[] | "Error: \(.error) - Data: \(.data)"'
     fi
 
     # Preguntar si continuar
@@ -142,14 +142,14 @@ migrate_all_candidates() {
         -H "Authorization: Token token=$TT_TOKEN" \
         -H "Content-Type: application/json")
 
-    CREATED=$(echo $MIGRATION_RESULT | jq -r '.created')
-    FAILED=$(echo $MIGRATION_RESULT | jq -r '.failed')
+    CREATED=$(echo "$MIGRATION_RESULT" | jq -r '.created')
+    FAILED=$(echo "$MIGRATION_RESULT" | jq -r '.failed')
 
     log_success "Migración completa finalizada: $CREATED creados, $FAILED fallidos"
 
     if [ "$FAILED" -gt 0 ]; then
         log_warning "Errores encontrados:"
-        echo $MIGRATION_RESULT | jq -r '.errors[] | "Error: \(.error) - Data: \(.data)"'
+        echo "$MIGRATION_RESULT" | jq -r '.errors[] | "Error: \(.error) - Data: \(.data)"'
     fi
 }
 
@@ -163,8 +163,8 @@ organize_in_prospect_pools() {
         -H "Authorization: Token token=$TT_TOKEN" \
         -H "Content-Type: application/json")
 
-    ENGINEERING_ADDED=$(echo $ENGINEERING_RESULT | jq -r '.candidates_added')
-    ENGINEERING_FAILED=$(echo $ENGINEERING_RESULT | jq -r '.candidates_failed')
+    ENGINEERING_ADDED=$(echo "$ENGINEERING_RESULT" | jq -r '.candidates_added')
+    ENGINEERING_FAILED=$(echo "$ENGINEERING_RESULT" | jq -r '.candidates_failed')
 
     log_success "Engineering Prospects: $ENGINEERING_ADDED añadidos, $ENGINEERING_FAILED fallidos"
 
@@ -174,8 +174,8 @@ organize_in_prospect_pools() {
         -H "Authorization: Token token=$TT_TOKEN" \
         -H "Content-Type: application/json")
 
-    DESIGN_ADDED=$(echo $DESIGN_RESULT | jq -r '.candidates_added')
-    DESIGN_FAILED=$(echo $DESIGN_RESULT | jq -r '.candidates_failed')
+    DESIGN_ADDED=$(echo "$DESIGN_RESULT" | jq -r '.candidates_added')
+    DESIGN_FAILED=$(echo "$DESIGN_RESULT" | jq -r '.candidates_failed')
 
     log_success "Design Prospects: $DESIGN_ADDED añadidos, $DESIGN_FAILED fallidos"
 
@@ -185,8 +185,8 @@ organize_in_prospect_pools() {
         -H "Authorization: Token token=$TT_TOKEN" \
         -H "Content-Type: application/json")
 
-    PRODUCT_ADDED=$(echo $PRODUCT_RESULT | jq -r '.candidates_added')
-    PRODUCT_FAILED=$(echo $PRODUCT_RESULT | jq -r '.candidates_failed')
+    PRODUCT_ADDED=$(echo "$PRODUCT_RESULT" | jq -r '.candidates_added')
+    PRODUCT_FAILED=$(echo "$PRODUCT_RESULT" | jq -r '.candidates_failed')
 
     log_success "Product Prospects: $PRODUCT_ADDED añadidos, $PRODUCT_FAILED fallidos"
 }
@@ -200,7 +200,7 @@ verify_migration() {
         -H "Authorization: Token token=$TT_TOKEN" \
         -H "Content-Type: application/json")
 
-    TOTAL_CANDIDATES=$(echo $CANDIDATES_RESPONSE | jq -r '.total')
+    TOTAL_CANDIDATES=$(echo "$CANDIDATES_RESPONSE" | jq -r '.total')
     log_success "Total de candidates en TeamTailor: $TOTAL_CANDIDATES"
 
     # Verificar prospect pools
@@ -209,7 +209,7 @@ verify_migration() {
         -H "Content-Type: application/json")
 
     log_info "Prospect pools creados:"
-    echo $POOLS_RESPONSE | jq -r '.pools[] | "- \(.name): \(.candidate_count) candidates"'
+    echo "$POOLS_RESPONSE" | jq -r '.pools[] | "- \(.name): \(.candidate_count) candidates"'
 
     # Buscar algunos candidates específicos
     log_info "Buscando candidates con external IDs..."
@@ -217,7 +217,7 @@ verify_migration() {
         -H "Authorization: Token token=$TT_TOKEN" \
         -H "Content-Type: application/json")
 
-    EXTERNAL_ID_COUNT=$(echo $SEARCH_RESULT | jq -r '.candidates | length')
+    EXTERNAL_ID_COUNT=$(echo "$SEARCH_RESULT" | jq -r '.candidates | length')
     log_success "Candidates con external IDs encontrados: $EXTERNAL_ID_COUNT"
 }
 

@@ -12,13 +12,13 @@ router = APIRouter(prefix="/scorecards", tags=["Scorecards"])
 
 @router.get("/")
 def list_scorecards(
-    pagination: Dict[str, Any] = Depends(pagination_dependency),
+   pagination: Dict[str, Any] = Depends(pagination_dependency),
 ):
-    """List all scorecards with pagination and metadata"""
-    return paginated_get("scorecards", pagination)
+   """List all scorecards with pagination and metadata"""
+   return paginated_get("scorecards", pagination)
 
 
 @router.get("/{scorecard_id}")
 def get_scorecard(scorecard_id: int):
-    """Get details of a specific scorecard by ID"""
-    return gh_get("scorecards/{scorecard_id}")
+   """Get details of a specific scorecard by ID"""
+   return gh_get("scorecards/{scorecard_id}")
