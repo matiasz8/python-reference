@@ -1,0 +1,96 @@
+﻿2025-08-27T12:11:16.2916561Z ##[group]Run actions/checkout@v4
+2025-08-27T12:11:16.2917114Z with:
+2025-08-27T12:11:16.2917306Z   fetch-depth: 0
+2025-08-27T12:11:16.2917517Z   repository: nanlabs/backend-reference
+2025-08-27T12:11:16.2917907Z   token: ***
+2025-08-27T12:11:16.2918087Z   ssh-strict: true
+2025-08-27T12:11:16.2918256Z   ssh-user: git
+2025-08-27T12:11:16.2918438Z   persist-credentials: true
+2025-08-27T12:11:16.2918640Z   clean: true
+2025-08-27T12:11:16.2918830Z   sparse-checkout-cone-mode: true
+2025-08-27T12:11:16.2919051Z   fetch-tags: false
+2025-08-27T12:11:16.2919230Z   show-progress: true
+2025-08-27T12:11:16.2919409Z   lfs: false
+2025-08-27T12:11:16.2919562Z   submodules: false
+2025-08-27T12:11:16.2919741Z   set-safe-directory: true
+2025-08-27T12:11:16.2920109Z ##[endgroup]
+2025-08-27T12:11:16.3997096Z Syncing repository: nanlabs/backend-reference
+2025-08-27T12:11:16.3998345Z ##[group]Getting Git version info
+2025-08-27T12:11:16.3998760Z Working directory is '/home/runner/work/backend-reference/backend-reference'
+2025-08-27T12:11:16.3999389Z [command]/usr/bin/git version
+2025-08-27T12:11:16.4130348Z git version 2.51.0
+2025-08-27T12:11:16.4158116Z ##[endgroup]
+2025-08-27T12:11:16.4172639Z Temporarily overriding HOME='/home/runner/work/_temp/f65b7148-1ee2-4e68-a39b-8048d5b0be71' before making global git config changes
+2025-08-27T12:11:16.4173579Z Adding repository directory to the temporary git global config as a safe directory
+2025-08-27T12:11:16.4178395Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/backend-reference/backend-reference
+2025-08-27T12:11:16.4217947Z Deleting the contents of '/home/runner/work/backend-reference/backend-reference'
+2025-08-27T12:11:16.4221560Z ##[group]Initializing the repository
+2025-08-27T12:11:16.4225585Z [command]/usr/bin/git init /home/runner/work/backend-reference/backend-reference
+2025-08-27T12:11:16.4331019Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-08-27T12:11:16.4331870Z hint: is subject to change. To configure the initial branch name to use in all
+2025-08-27T12:11:16.4332410Z hint: of your new repositories, which will suppress this warning, call:
+2025-08-27T12:11:16.4332969Z hint:
+2025-08-27T12:11:16.4333376Z hint: 	git config --global init.defaultBranch <name>
+2025-08-27T12:11:16.4333810Z hint:
+2025-08-27T12:11:16.4334259Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-08-27T12:11:16.4335049Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-08-27T12:11:16.4335658Z hint:
+2025-08-27T12:11:16.4335954Z hint: 	git branch -m <name>
+2025-08-27T12:11:16.4336296Z hint:
+2025-08-27T12:11:16.4336791Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-08-27T12:11:16.4338011Z Initialized empty Git repository in /home/runner/work/backend-reference/backend-reference/.git/
+2025-08-27T12:11:16.4350003Z [command]/usr/bin/git remote add origin https://github.com/nanlabs/backend-reference
+2025-08-27T12:11:16.4390977Z ##[endgroup]
+2025-08-27T12:11:16.4391642Z ##[group]Disabling automatic garbage collection
+2025-08-27T12:11:16.4396190Z [command]/usr/bin/git config --local gc.auto 0
+2025-08-27T12:11:16.4424209Z ##[endgroup]
+2025-08-27T12:11:16.4424775Z ##[group]Setting up auth
+2025-08-27T12:11:16.4432106Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-08-27T12:11:16.4461797Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-08-27T12:11:16.4815542Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-08-27T12:11:16.4846581Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-08-27T12:11:16.5074309Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-08-27T12:11:16.5111220Z ##[endgroup]
+2025-08-27T12:11:16.5120301Z ##[group]Fetching the repository
+2025-08-27T12:11:16.5122301Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +fe42bc842aad7bea92d6816dc3a1490ad8c94298:refs/remotes/pull/115/merge
+2025-08-27T12:11:22.4941279Z From https://github.com/nanlabs/backend-reference
+2025-08-27T12:11:22.4943144Z  * [new branch]      dependabot/go_modules/examples/golang-api-with-postgres-and-sqlc/golang.org/x/crypto-0.31.0 -> origin/dependabot/go_modules/examples/golang-api-with-postgres-and-sqlc/golang.org/x/crypto-0.31.0
+2025-08-27T12:11:22.4945711Z  * [new branch]      dependabot/go_modules/examples/golang-todo-rest-crud/github.com/docker/docker-25.0.6incompatible -> origin/dependabot/go_modules/examples/golang-todo-rest-crud/github.com/docker/docker-25.0.6incompatible
+2025-08-27T12:11:22.4948044Z  * [new branch]      dependabot/go_modules/examples/golang-todo-rest-crud/golang.org/x/net-0.33.0 -> origin/dependabot/go_modules/examples/golang-todo-rest-crud/golang.org/x/net-0.33.0
+2025-08-27T12:11:22.4950273Z  * [new branch]      dependabot/npm_and_yarn/examples/fastapi-postgres-with-serverless/multi-461fef9243 -> origin/dependabot/npm_and_yarn/examples/fastapi-postgres-with-serverless/multi-461fef9243
+2025-08-27T12:11:22.4952955Z  * [new branch]      dependabot/npm_and_yarn/examples/nest-nats-microservices/service-c/serialize-javascript-6.0.2 -> origin/dependabot/npm_and_yarn/examples/nest-nats-microservices/service-c/serialize-javascript-6.0.2
+2025-08-27T12:11:22.4955422Z  * [new branch]      dependabot/npm_and_yarn/examples/stripe-integration-node-typescript/cross-spawn-7.0.6 -> origin/dependabot/npm_and_yarn/examples/stripe-integration-node-typescript/cross-spawn-7.0.6
+2025-08-27T12:11:22.4957765Z  * [new branch]      dependabot/npm_and_yarn/examples/stripe-integration-node-typescript/multi-8a99b2c3f2 -> origin/dependabot/npm_and_yarn/examples/stripe-integration-node-typescript/multi-8a99b2c3f2
+2025-08-27T12:11:22.4959478Z  * [new branch]      feat/langgraph-sls-fastapi-rag           -> origin/feat/langgraph-sls-fastapi-rag
+2025-08-27T12:11:22.4960640Z  * [new branch]      feat/music-licensing-challenge           -> origin/feat/music-licensing-challenge
+2025-08-27T12:11:22.4961555Z  * [new branch]      fix/linting-fixes                        -> origin/fix/linting-fixes
+2025-08-27T12:11:22.4962256Z  * [new branch]      main                                     -> origin/main
+2025-08-27T12:11:22.4962934Z  * [new ref]         fe42bc842aad7bea92d6816dc3a1490ad8c94298 -> pull/115/merge
+2025-08-27T12:11:22.5008641Z ##[endgroup]
+2025-08-27T12:11:22.5009191Z ##[group]Determining the checkout info
+2025-08-27T12:11:22.5009933Z ##[endgroup]
+2025-08-27T12:11:22.5014982Z [command]/usr/bin/git sparse-checkout disable
+2025-08-27T12:11:22.5069885Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-08-27T12:11:22.5095648Z ##[group]Checking out the ref
+2025-08-27T12:11:22.5099501Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/115/merge
+2025-08-27T12:11:23.3258024Z Note: switching to 'refs/remotes/pull/115/merge'.
+2025-08-27T12:11:23.3258463Z 
+2025-08-27T12:11:23.3258766Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-08-27T12:11:23.3259585Z changes and commit them, and you can discard any commits you make in this
+2025-08-27T12:11:23.3260295Z state without impacting any branches by switching back to a branch.
+2025-08-27T12:11:23.3260907Z 
+2025-08-27T12:11:23.3261175Z If you want to create a new branch to retain commits you create, you may
+2025-08-27T12:11:23.3261817Z do so (now or later) by using -c with the switch command. Example:
+2025-08-27T12:11:23.3262198Z 
+2025-08-27T12:11:23.3262343Z   git switch -c <new-branch-name>
+2025-08-27T12:11:23.3262600Z 
+2025-08-27T12:11:23.3262750Z Or undo this operation with:
+2025-08-27T12:11:23.3262993Z 
+2025-08-27T12:11:23.3263464Z   git switch -
+2025-08-27T12:11:23.3263643Z 
+2025-08-27T12:11:23.3263969Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-08-27T12:11:23.3264430Z 
+2025-08-27T12:11:23.3264965Z HEAD is now at fe42bc8 Merge ce80272b2841c00b2580e2219ccffd6c6a54cf1d into a0cae9636eb3a209ac4e44f671bd97b6e83a515d
+2025-08-27T12:11:23.3298660Z ##[endgroup]
+2025-08-27T12:11:23.3338124Z [command]/usr/bin/git log -1 --format=%H
+2025-08-27T12:11:23.3359467Z fe42bc842aad7bea92d6816dc3a1490ad8c94298

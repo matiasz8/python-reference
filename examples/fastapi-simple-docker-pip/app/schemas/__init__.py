@@ -3,10 +3,10 @@ from .sorting import Sorting
 from .user import User
 
 __all__ = [
-    "NoteBase",
-    "NoteCreate",
-    "NoteOut",
-    "NoteUpdate",
-    "Sorting",
-    "User",
+   "NoteBase",
+   "NoteCreate",
+   "NoteOut",
+   "NoteUpdate",
+   "Sorting",
+   "User",
 ]

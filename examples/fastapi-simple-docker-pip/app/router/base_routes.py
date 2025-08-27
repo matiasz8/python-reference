@@ -5,15 +5,15 @@ router = APIRouter()
 
 @router.get("/")
 def root() -> dict[str, str]:
-    return {"message": "Hello World"}
+   return {"message": "Hello World"}
 
 
 @router.get("/test")
 def test(request: Request) -> dict[str, str]:
-    # return request headers
-    return dict(request.headers)
+   # return request headers
+   return dict(request.headers)
 
 
 @router.get("/healthz")
 def healthcheck() -> dict[str, str]:
-    return {"status": "ok"}
+   return {"status": "ok"}

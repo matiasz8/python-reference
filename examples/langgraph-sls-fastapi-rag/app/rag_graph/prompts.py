@@ -9,7 +9,7 @@ Consider the following web search results:
 
 System time: {system_time}"""
 QUERY_SYSTEM_PROMPT = """Generate search queries to retrieve documents that may help answer the user's question. Previously, you made the following queries:
-    
+
 <previous_queries/>
 {queries}
 </previous_queries>

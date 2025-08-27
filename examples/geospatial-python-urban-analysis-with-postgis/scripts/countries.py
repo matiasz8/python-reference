@@ -24,7 +24,7 @@ world.plot(ax=ax, color="lightgray", edgecolor="black")
 plt.title("World Map with Geopandas")
 plt.show()
 
-## Heatmap 
+## Heatmap
 
 fig, ax = plt.subplots(figsize=(12, 6))
 world.plot(column="POP_EST", cmap="plasma", linewidth=0.5, edgecolor="black", legend=True, ax=ax)
@@ -58,11 +58,11 @@ large_countries.plot(ax=ax, color="yellow", edgecolor="black", label="> 100M inh
 
 # 6️⃣ Add country names to the map
 for x, y, label in zip(
-    large_countries.geometry.centroid.x, 
-    large_countries.geometry.centroid.y, 
-    large_countries.NAME
+   large_countries.geometry.centroid.x,
+   large_countries.geometry.centroid.y,
+   large_countries.NAME
 ):
-    ax.text(x, y, label, fontsize=9, ha="center", color="black")
+   ax.text(x, y, label, fontsize=9, ha="center", color="black")
 
 # Add legend
 ax.legend()

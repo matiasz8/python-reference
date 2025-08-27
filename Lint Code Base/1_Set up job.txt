@@ -1,0 +1,31 @@
+﻿2025-08-27T12:10:04.7089432Z Current runner version: '2.328.0'
+2025-08-27T12:10:04.7114982Z ##[group]Runner Image Provisioner
+2025-08-27T12:10:04.7115929Z Hosted Compute Agent
+2025-08-27T12:10:04.7116439Z Version: 20250825.382
+2025-08-27T12:10:04.7117008Z Commit: 7109f2abf901479dac39397456e363ac0cca0730
+2025-08-27T12:10:04.7117730Z Build Date: 2025-08-25T22:55:50Z
+2025-08-27T12:10:04.7118319Z ##[endgroup]
+2025-08-27T12:10:04.7118834Z ##[group]Operating System
+2025-08-27T12:10:04.7119440Z Ubuntu
+2025-08-27T12:10:04.7119921Z 24.04.3
+2025-08-27T12:10:04.7120336Z LTS
+2025-08-27T12:10:04.7120999Z ##[endgroup]
+2025-08-27T12:10:04.7121469Z ##[group]Runner Image
+2025-08-27T12:10:04.7122051Z Image: ubuntu-24.04
+2025-08-27T12:10:04.7122550Z Version: 20250824.1.0
+2025-08-27T12:10:04.7123636Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250824.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-08-27T12:10:04.7125038Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250824.1
+2025-08-27T12:10:04.7126232Z ##[endgroup]
+2025-08-27T12:10:04.7127443Z ##[group]GITHUB_TOKEN Permissions
+2025-08-27T12:10:04.7129547Z Contents: read
+2025-08-27T12:10:04.7130115Z Metadata: read
+2025-08-27T12:10:04.7131050Z Packages: read
+2025-08-27T12:10:04.7131577Z Statuses: read
+2025-08-27T12:10:04.7132064Z ##[endgroup]
+2025-08-27T12:10:04.7134581Z Secret source: None
+2025-08-27T12:10:04.7135541Z Prepare workflow directory
+2025-08-27T12:10:04.7473104Z Prepare all required actions
+2025-08-27T12:10:04.7510153Z Getting action download info
+2025-08-27T12:10:05.0554816Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-08-27T12:10:05.1547252Z Download action repository 'super-linter/super-linter@v5' (SHA:a8150b40c89574adb5f68bf9502b890a236a06b3)
+2025-08-27T12:10:05.8056024Z Complete job name: Lint Code Base

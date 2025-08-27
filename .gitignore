@@ -131,3 +131,6 @@ dmypy.json
 # Env files
 .env*
 .vscode/
+
+# AppImage files
+*.AppImage

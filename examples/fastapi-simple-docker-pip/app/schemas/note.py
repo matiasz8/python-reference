@@ -4,22 +4,22 @@ from pydantic import BaseModel
 
 
 class NoteBase(BaseModel):
-    title: str
-    description: str
-    summary: Any
-    media_url: str
-    preview_image_url: str
-    owner_id: str
+   title: str
+   description: str
+   summary: Any
+   media_url: str
+   preview_image_url: str
+   owner_id: str
 
 
 class NoteCreate(NoteBase):
-    id: str
+   id: str
 
 
 class NoteUpdate(NoteBase):
-    id: str
+   id: str
 
 
 class NoteOut(NoteBase):
-    class Config:
-        from_attributes = True
+   class Config:
+     from_attributes = True
