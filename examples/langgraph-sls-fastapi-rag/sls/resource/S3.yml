@@ -40,3 +40,4 @@ Outputs:
     Description: S3 bucket for programs
     Export:
       Name: ${self:service}-${sls:stage}-programs-s3-bucket
+

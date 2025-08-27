@@ -24,20 +24,20 @@ logger = logging.getLogger(__name__)
 def make_text_encoder(model: str) -> Embeddings:
    """Connect to the configured text encoder."""
    if "/" not in model:
-     raise ValueError(f"Invalid model format: {model}. Expected format: 'provider/model'")
+   raise ValueError(f"Invalid model format: {model}. Expected format: 'provider/model'")
 
    provider, model = model.split("/", maxsplit=1)
    match provider:
-     case "openai":
-         from langchain_openai import OpenAIEmbeddings
+   case "openai":
+     from langchain_openai import OpenAIEmbeddings
 
-         return OpenAIEmbeddings(model=model)
-     case "cohere":
-         from langchain_cohere import CohereEmbeddings
+     return OpenAIEmbeddings(model=model)
+   case "cohere":
+     from langchain_cohere import CohereEmbeddings
 
-         return CohereEmbeddings(model=model)  # type: ignore
-     case _:
-         raise ValueError(f"Unsupported embedding provider: {provider}")
+     return CohereEmbeddings(model=model)  # type: ignore
+   case _:
+     raise ValueError(f"Unsupported embedding provider: {provider}")
 
 
 ## Retriever constructors
@@ -52,19 +52,19 @@ def make_elastic_retriever(
 
    connection_options = {}
    if configuration.retriever_provider == "elastic-local":
-     connection_options = {
-         "es_user": os.environ["ELASTICSEARCH_USER"],
-         "es_password": os.environ["ELASTICSEARCH_PASSWORD"],
-     }
+   connection_options = {
+     "es_user": os.environ["ELASTICSEARCH_USER"],
+     "es_password": os.environ["ELASTICSEARCH_PASSWORD"],
+   }
 
    else:
-     connection_options = {"es_api_key": os.environ["ELASTICSEARCH_API_KEY"]}
+   connection_options = {"es_api_key": os.environ["ELASTICSEARCH_API_KEY"]}
 
    vstore = ElasticsearchStore(
-     **connection_options,  # type: ignore
-     es_url=os.environ["ELASTICSEARCH_URL"],
-     index_name="langchain_index",
-     embedding=embedding_model,
+   **connection_options,  # type: ignore
+   es_url=os.environ["ELASTICSEARCH_URL"],
+   index_name="langchain_index",
+   embedding=embedding_model,
    )
 
    search_kwargs = configuration.search_kwargs
@@ -83,11 +83,11 @@ def make_pinecone_retriever(
 
    user_search_kwargs = configuration.search_kwargs or {}
    user_search_kwargs["filter"] = {
-     **user_search_kwargs.get("filter", {}),
-     "user_id": {"$eq": configuration.user_id},
+   **user_search_kwargs.get("filter", {}),
+   "user_id": {"$eq": configuration.user_id},
    }
    vstore = PineconeVectorStore.from_existing_index(
-     os.environ["PINECONE_INDEX_NAME"], embedding=embedding_model
+   os.environ["PINECONE_INDEX_NAME"], embedding=embedding_model
    )
    yield vstore.as_retriever(search_kwargs=user_search_kwargs)
 
@@ -100,9 +100,9 @@ def make_mongodb_retriever(
    from langchain_mongodb.vectorstores import MongoDBAtlasVectorSearch
 
    vstore = MongoDBAtlasVectorSearch.from_connection_string(
-     os.environ["MONGODB_URI"],
-     namespace="langgraph_retrieval_agent.default",
-     embedding=embedding_model,
+   os.environ["MONGODB_URI"],
+   namespace="langgraph_retrieval_agent.default",
+   embedding=embedding_model,
    )
    search_kwargs = configuration.search_kwargs
    pre_filter = search_kwargs.setdefault("pre_filter", {})
@@ -119,23 +119,23 @@ def make_retriever(
    embedding_model = make_text_encoder(configuration.embedding_model)
    user_id = configuration.user_id
    if not user_id:
-     raise ValueError("Please provide a valid user_id in the configuration.")
+   raise ValueError("Please provide a valid user_id in the configuration.")
    match configuration.retriever_provider:
-     case "elastic" | "elastic-local":
-         with make_elastic_retriever(configuration, embedding_model) as retriever:
-             yield retriever
+   case "elastic" | "elastic-local":
+     with make_elastic_retriever(configuration, embedding_model) as retriever:
+         yield retriever
 
-     case "pinecone":
-         with make_pinecone_retriever(configuration, embedding_model) as retriever:
-             yield retriever
+   case "pinecone":
+     with make_pinecone_retriever(configuration, embedding_model) as retriever:
+         yield retriever
 
-     case "mongodb":
-         with make_mongodb_retriever(configuration, embedding_model) as retriever:
-             yield retriever
+   case "mongodb":
+     with make_mongodb_retriever(configuration, embedding_model) as retriever:
+         yield retriever
 
-     case _:
-         raise ValueError(
-             "Unrecognized retriever_provider in configuration. "
-             f"Expected one of: {', '.join(Configuration.__annotations__['retriever_provider'].__args__)}\n"
-             f"Got: {configuration.retriever_provider}"
-         )
+   case _:
+     raise ValueError(
+         "Unrecognized retriever_provider in configuration. "
+         f"Expected one of: {', '.join(Configuration.__annotations__['retriever_provider'].__args__)}\n"
+         f"Got: {configuration.retriever_provider}"
+     )

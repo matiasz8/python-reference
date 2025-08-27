@@ -28,3 +28,4 @@ $ aws --endpoint-url=http://localhost:4566 s3 ls
 ## LocalStack Desktop
 
 You can use [LocalStack Desktop](https://docs.localstack.cloud/user-guide/tools/localstack-desktop/) to manage the resources created by the docker compose.
+

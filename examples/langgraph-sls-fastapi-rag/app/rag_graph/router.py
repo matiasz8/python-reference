@@ -18,12 +18,12 @@ def get_statuses() -> StatusResponse:
 async def retrieve(request: RetrieveRequest) -> RetrieveResponse:
    index_name = os.environ["PINECONE_INDEX_NAME"]
    obj = {
-     "user_id": request.user_id,
-     "index_name": index_name,
-     "retriever_provider": "pinecone",
-     "embedding_model": "openai/text-embedding-3-small",
-     "thread_id": request.thread_id,
-     "aws_region": "us-west-2",
+   "user_id": request.user_id,
+   "index_name": index_name,
+   "retriever_provider": "pinecone",
+   "embedding_model": "openai/text-embedding-3-small",
+   "thread_id": request.thread_id,
+   "aws_region": "us-west-2",
    }
    # Create the base configuration
    graph = create_graph()
@@ -33,22 +33,22 @@ async def retrieve(request: RetrieveRequest) -> RetrieveResponse:
    # Convert web search results to the correct format
    web_search_results = []
    if "web_search_results" in result:
-     web_search_results = [
-         WebSearchResult(
-             title=item.get("title", ""),
-             url=item.get("url", ""),
-             content=item.get("content", ""),
-             score=item.get("score", 0.0),
-         )
-         for item in result["web_search_results"]
-     ]
+   web_search_results = [
+     WebSearchResult(
+         title=item.get("title", ""),
+         url=item.get("url", ""),
+         content=item.get("content", ""),
+         score=item.get("score", 0.0),
+     )
+     for item in result["web_search_results"]
+   ]
 
    # Ensure all required keys exist in the result
    if "messages" not in result or "retrieved_docs" not in result:
-     raise ValueError(f"Incomplete result from graph: {list(result.keys())}")
+   raise ValueError(f"Incomplete result from graph: {list(result.keys())}")
 
    return RetrieveResponse(
-     messages=result["messages"],
-     retrieved_docs=result["retrieved_docs"],
-     web_search_results=web_search_results,
+   messages=result["messages"],
+   retrieved_docs=result["retrieved_docs"],
+   web_search_results=web_search_results,
    )

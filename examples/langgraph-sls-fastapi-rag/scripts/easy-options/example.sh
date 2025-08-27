@@ -32,3 +32,4 @@ ROOT="$(realpath "$(dirname "$0")")"
 for argument in "${arguments[@]}"; do
     echo "Argument specified: $argument"
 done
+

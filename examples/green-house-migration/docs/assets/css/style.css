@@ -76,7 +76,7 @@ body {
   background: white;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 10%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 }
 
 /* Sidebar */
@@ -91,6 +91,10 @@ body {
   padding: 1.5rem;
   border-radius: 8px;
   border: 1px solid #e1e4e8;
+}
+
+h3 {
+  font-size: 1.25rem;
 }
 
 .sidebar-content h3 {
@@ -167,10 +171,6 @@ h2 {
   padding-bottom: 0.25rem;
 }
 
-h3 {
-  font-size: 1.25rem;
-}
-
 p {
   margin-bottom: 1rem;
 }
@@ -187,7 +187,7 @@ pre {
 }
 
 code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 0.9rem;
   background: #f6f8fa;
   padding: 0.2rem 0.4rem;
@@ -228,7 +228,7 @@ table {
   background: white;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
 }
 
 th,
@@ -397,7 +397,7 @@ a:hover {
 
   .content {
     background: #161b22;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
   }
 
   .sidebar-content {

@@ -10,3 +10,4 @@ langsmith_callbacks_background: ${ssm:/${self:service}/common/langsmith-callback
 
 s3_bucket_name: ${ssm:/${self:service}/${sls:stage}/s3-bucket-name}
 checkpoints_table_name: ${ssm:/${self:service}/common/checkpoints-table-name}
+

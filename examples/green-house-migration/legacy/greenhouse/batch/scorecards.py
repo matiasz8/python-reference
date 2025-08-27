@@ -5,9 +5,9 @@ from legacy.greenhouse.processor import BaseProcessor
 
 
 class ScorecardsProcessor(BaseProcessor):
-   """Processor for fetching scorecards from the Greenhouse API."""
+     """Processor for fetching scorecards from the Greenhouse API."""
 
-   entity = "scorecards"
+     entity = "scorecards"
 
-   def fetch(self):
-       return fetch_all_from_api("scorecards")
+     def fetch(self):
+         return fetch_all_from_api("scorecards")

@@ -12,7 +12,7 @@ def root() -> dict[str, str]:
 def test(request: Request) -> dict[str, str]:
    # Return only non-sensitive headers or add access control
    safe_headers = {
-     k: v for k, v in request.headers.items() if k.lower() not in ("authorization", "cookie")
+   k: v for k, v in request.headers.items() if k.lower() not in ("authorization", "cookie")
    }
    return safe_headers
 

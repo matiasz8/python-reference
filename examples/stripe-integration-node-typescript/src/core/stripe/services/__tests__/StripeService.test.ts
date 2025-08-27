@@ -67,7 +67,7 @@ describe('createCheckoutSession', () => {
     const checkoutSessionResponse = {
       url: process.env.STRIPE_SUCCESS_URL,
     };
-    
+
     const createCheckoutSessionMock = setUpMocks(checkoutSessionResponse);
 
     // Assures only the customer is sent in the params
@@ -79,7 +79,7 @@ describe('createCheckoutSession', () => {
 
     // Run the checkout session creation
     const sessionUrl = await StripeService.createCheckoutSession(formattedParams);
-    
+
     // Add customer to expected session parameters
     const sessionParamsWithCustomer = {
       ...createCheckoutSessionParams,
@@ -101,7 +101,7 @@ describe('createCheckoutSession', () => {
     const checkoutSessionResponse = {
       url: process.env.STRIPE_SUCCESS_URL,
     };
-    
+
     const createCheckoutSessionMock = setUpMocks(checkoutSessionResponse);
 
     // Assures only email is send the params
@@ -114,7 +114,7 @@ describe('createCheckoutSession', () => {
 
     // Run the checkout session creation
     const sessionUrl = await StripeService.createCheckoutSession(formattedParams);
-    
+
     // Add customer to expected session parameters
     const sessionParamsWithoutCustomer = {
       ...createCheckoutSessionParams,
@@ -137,7 +137,7 @@ describe('createCheckoutSession', () => {
     const checkoutSessionResponse = {
       url: process.env.STRIPE_SUCCESS_URL,
     };
-    
+
     const createCheckoutSessionMock = setUpMocks(checkoutSessionResponse);
 
     // Assures only email is send the params
@@ -150,7 +150,7 @@ describe('createCheckoutSession', () => {
 
     // Run the checkout session creation
     const sessionUrl = await StripeService.createCheckoutSession(formattedParams);
-    
+
     // Add customer to expected session parameters
     const sessionParamsWithoutCustomer = {
       ...createCheckoutSessionParams,
@@ -171,27 +171,27 @@ describe('createCheckoutSession', () => {
   it('should get a custom error when checkout session is not created', async () => {
     // Set error message
     const errorMessage = 'Error creating checkout session';
-    
+
     // Set createCheckoutSession response to null
     const checkoutSessionResponse = null;
-    
+
     setUpMocks(checkoutSessionResponse);
 
     // Run the checkout session creation and perform assertions
-    await expect(StripeService.createCheckoutSession(params)).rejects.toThrowError(errorMessage);    
+    await expect(StripeService.createCheckoutSession(params)).rejects.toThrowError(errorMessage);
   });
 
   it('should get an error when an error is triggered while checkout session being created', async () => {
     // Set error message
     const errorMessage = 'Error on StripeClient while creating checkout session';
-  
+
     // Mock the StripeClient to trigger an error
     jest.spyOn(StripeClient, 'getStripeClient').mockImplementation(() => {
       throw new Error(errorMessage);
     });
 
     // Run the checkout session creation and assert that the error is thrown
-    await expect(StripeService.createCheckoutSession(params)).rejects.toThrowError(errorMessage);    
+    await expect(StripeService.createCheckoutSession(params)).rejects.toThrowError(errorMessage);
   });
 });
 

@@ -28,12 +28,12 @@ def create_checkpointer():
    """Factory function to create a DynamoDB checkpointer singleton."""
    checkpoints_table_name = os.environ.get("CHECKPOINT_TABLE_NAME", None)
    if not checkpoints_table_name:
-     raise ValueError("CHECKPOINT_TABLE_NAME environment variable must be set")
+   raise ValueError("CHECKPOINT_TABLE_NAME environment variable must be set")
 
    config = DynamoDBConfig(
-     table_config=DynamoDBTableConfig(
-         table_name=checkpoints_table_name,
-     ),
+   table_config=DynamoDBTableConfig(
+     table_name=checkpoints_table_name,
+   ),
    )
    return DynamoDBSaver(config=config)
 
@@ -56,9 +56,9 @@ def create_graph():
 
    # print the graph image
    graph = builder.compile(
-     checkpointer=checkpointer,
-     interrupt_before=[],  # if you want to update the state before calling the tools
-     interrupt_after=[],
+   checkpointer=checkpointer,
+   interrupt_before=[],  # if you want to update the state before calling the tools
+   interrupt_after=[],
    )
    graph.name = "RetrievalGraph"
    return graph

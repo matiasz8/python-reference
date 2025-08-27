@@ -22,12 +22,12 @@ def make_text_encoder(model: str) -> Embeddings:
    """Connect to the configured text encoder."""
    provider, model = model.split("/", maxsplit=1)
    match provider:
-     case "openai":
-         from langchain_openai import OpenAIEmbeddings
+   case "openai":
+     from langchain_openai import OpenAIEmbeddings
 
-         return OpenAIEmbeddings(model=model)
-     case _:
-         raise ValueError(f"Unsupported embedding provider: {provider}")
+     return OpenAIEmbeddings(model=model)
+   case _:
+     raise ValueError(f"Unsupported embedding provider: {provider}")
 
 
 @contextmanager
@@ -40,7 +40,7 @@ def make_pinecone_retriever(
    search_kwargs = configuration.search_kwargs
 
    vstore = PineconeVectorStore.from_existing_index(
-     os.environ["PINECONE_INDEX_NAME"], embedding=embedding_model
+   os.environ["PINECONE_INDEX_NAME"], embedding=embedding_model
    )
    yield vstore.as_retriever(search_kwargs=search_kwargs)
 
@@ -54,13 +54,13 @@ def make_retriever(
    embedding_model = make_text_encoder(configuration.embedding_model)
    user_id = configuration.user_id
    if not user_id:
-     raise ValueError("Please provide a valid user_id in the configuration.")
+   raise ValueError("Please provide a valid user_id in the configuration.")
    match configuration.retriever_provider:
-     case "pinecone":
-         with make_pinecone_retriever(configuration, embedding_model) as retriever:
-             yield retriever
-     case _:
-         raise ValueError(
-             "Unrecognized retriever_provider in configuration. "
-             f"Got: {configuration.retriever_provider}"
-         )
+   case "pinecone":
+     with make_pinecone_retriever(configuration, embedding_model) as retriever:
+         yield retriever
+   case _:
+     raise ValueError(
+         "Unrecognized retriever_provider in configuration. "
+         f"Got: {configuration.retriever_provider}"
+     )

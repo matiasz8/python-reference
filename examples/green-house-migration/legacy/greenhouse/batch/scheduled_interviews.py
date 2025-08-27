@@ -5,9 +5,9 @@ from legacy.greenhouse.processor import BaseProcessor
 
 
 class ScheduledInterviewsProcessor(BaseProcessor):
-   """Processor for fetching scheduled interviews from the Greenhouse API."""
+     """Processor for fetching scheduled interviews from the Greenhouse API."""
 
-   entity = "scheduled_interviews"
+     entity = "scheduled_interviews"
 
-   def fetch(self):
-       return fetch_all_from_api("scheduled_interviews")
+     def fetch(self):
+         return fetch_all_from_api("scheduled_interviews")

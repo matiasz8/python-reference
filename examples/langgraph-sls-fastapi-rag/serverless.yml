@@ -52,3 +52,4 @@ resources:
   - ${file(sls/resource/S3.yml)}
   - ${file(sls/resource/bedrock.yml)}
   - ${file(sls/resource/dynamodb-checkpointer.yml)}
+

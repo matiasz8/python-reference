@@ -33,11 +33,11 @@ from langgraph.graph import add_messages
 def reduce_docs(
    existing: Optional[Sequence[Document]],
    new: Union[
-     Sequence[Document],
-     Sequence[dict[str, Any]],
-     Sequence[str],
-     str,
-     Literal["delete"],
+   Sequence[Document],
+   Sequence[dict[str, Any]],
+   Sequence[str],
+   str,
+   Literal["delete"],
    ],
 ) -> Sequence[Document]:
    """Reduce and process documents based on the input type.
@@ -46,25 +46,25 @@ def reduce_docs(
    It can delete existing documents, create new ones from strings or dictionaries, or return the existing documents.
 
    Args:
-     existing (Optional[Sequence[Document]]): The existing docs in the state, if any.
-     new (Union[Sequence[Document], Sequence[dict[str, Any]], Sequence[str], str, Literal["delete"]]):
-         The new input to process. Can be a sequence of Documents, dictionaries, strings, a single string,
-         or the literal "delete".
+   existing (Optional[Sequence[Document]]): The existing docs in the state, if any.
+   new (Union[Sequence[Document], Sequence[dict[str, Any]], Sequence[str], str, Literal["delete"]]):
+     The new input to process. Can be a sequence of Documents, dictionaries, strings, a single string,
+     or the literal "delete".
    """
    if new == "delete":
-     return []
+   return []
    if isinstance(new, str):
-     return [Document(page_content=new, metadata={"id": str(uuid.uuid4())})]
+   return [Document(page_content=new, metadata={"id": str(uuid.uuid4())})]
    if isinstance(new, list):
-     coerced = []
-     for item in new:
-         if isinstance(item, str):
-             coerced.append(Document(page_content=item, metadata={"id": str(uuid.uuid4())}))
-         elif isinstance(item, dict):
-             coerced.append(Document(**item))
-         else:
-             coerced.append(item)
-     return coerced
+   coerced = []
+   for item in new:
+     if isinstance(item, str):
+         coerced.append(Document(page_content=item, metadata={"id": str(uuid.uuid4())}))
+     elif isinstance(item, dict):
+         coerced.append(Document(**item))
+     else:
+         coerced.append(item)
+   return coerced
    return existing or []
 
 
@@ -107,16 +107,16 @@ class InputState:
 
    1. HumanMessage - user input
    2. AIMessage with .tool_calls - agent picking tool(s) to use to collect
-      information
+  information
    3. ToolMessage(s) - the responses (or errors) from the executed tools
 
-     (... repeat steps 2 and 3 as needed ...)
+   (... repeat steps 2 and 3 as needed ...)
    4. AIMessage without .tool_calls - agent responding in unstructured
-     format to the user.
+   format to the user.
 
    5. HumanMessage - user responds with the next conversational turn.
 
-     (... repeat steps 2-5 as needed ... )
+   (... repeat steps 2-5 as needed ... )
 
    Merges two lists of messages, updating existing messages by ID.
 
@@ -124,9 +124,9 @@ class InputState:
    new message has the same ID as an existing message.
 
    Returns:
-     A new list of messages with the messages from `right` merged into `left`.
-     If a message in `right` has the same ID as a message in `left`, the
-     message from `right` will replace the message from `left`."""
+   A new list of messages with the messages from `right` merged into `left`.
+   If a message in `right` has the same ID as a message in `left`, the
+   message from `right` will replace the message from `left`."""
 
 
 # This is the primary state of your agent, where you can store any information
@@ -136,11 +136,11 @@ def add_queries(existing: Sequence[str], new: Sequence[str]) -> Sequence[str]:
    """Combine existing queries with new queries.
 
    Args:
-     existing (Sequence[str]): The current list of queries in the state.
-     new (Sequence[str]): The new queries to be added.
+   existing (Sequence[str]): The current list of queries in the state.
+   new (Sequence[str]): The new queries to be added.
 
    Returns:
-     Sequence[str]: A new list containing all queries from both input sequences.
+   Sequence[str]: A new list containing all queries from both input sequences.
    """
    return list(existing) + list(new)
 

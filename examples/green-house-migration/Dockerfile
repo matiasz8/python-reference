@@ -7,17 +7,15 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app
 ENV PORT=8000
 
-# Install system dependencies
+# Install system dependencies and pipenv
 RUN apk add --no-cache-dir \
-    gcc \
-    musl-dev \
-    libffi-dev \
-    openssl-dev \
-    curl \
-    git
-
-# Install pipenv
-RUN pip install --no-cache-dir pipenv
+    gcc=12.2.1_git20220924-r4 \
+    musl-dev=1.2.4_git20230717-r4 \
+    libffi-dev=3.4.4-r2 \
+    openssl-dev=3.0.12-r0 \
+    curl=8.4.0-r0 \
+    git=2.40.1-r0 \
+    && pip install --no-cache-dir pipenv==2023.7.23
 
 # Create non-root user
 RUN addgroup -g 1000 appuser && adduser -D -s /bin/sh -u 1000 -G appuser appuser

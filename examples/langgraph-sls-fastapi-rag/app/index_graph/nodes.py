@@ -15,17 +15,17 @@ logger = logging.getLogger(__name__)
 async def index_docs(state: IndexState, *, config: Optional[RunnableConfig] = None) -> IndexState:
    """Index the documents in the state."""
    if not config:
-     raise ValueError("Configuration required to run index_docs.")
+   raise ValueError("Configuration required to run index_docs.")
 
    try:
-     with make_retriever(config) as retriever:
-         logger.info(f"Starting document indexing process with {len(state.docs)} documents")
-         await retriever.aadd_documents(state.docs)
-     logger.info("Document indexing process completed successfully")
-     return state
+   with make_retriever(config) as retriever:
+     logger.info(f"Starting document indexing process with {len(state.docs)} documents")
+     await retriever.aadd_documents(state.docs)
+   logger.info("Document indexing process completed successfully")
+   return state
    except Exception as e:
-     logger.error(f"Failed to index documents: {str(e)}")
-     raise
+   logger.error(f"Failed to index documents: {str(e)}")
+   raise
 
 
 async def fetch_s3_content(
@@ -40,11 +40,11 @@ async def fetch_s3_content(
    file_contents = service.read_all_csv_files()
    base_metadata = {"source": "s3"}
    docs = [
-     Document(
-         page_content=row["content"],
-         metadata={**base_metadata, "title": row["title"], "created_at": row["created"]},
-     )
-     for row in file_contents
+   Document(
+     page_content=row["content"],
+     metadata={**base_metadata, "title": row["title"], "created_at": row["created"]},
+   )
+   for row in file_contents
    ]
    logger.info(f"Successfully processed {len(docs)} S3 documents")
    return {"docs": docs}

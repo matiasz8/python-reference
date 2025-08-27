@@ -12,11 +12,11 @@ router = APIRouter(prefix="/offers", tags=["Offers"])
 
 @router.get("/")
 def list_offers(pagination: Dict[str, Any] = Depends(pagination_dependency)):
-   """List all offers with pagination and metadata"""
-   return paginated_get("offers", pagination)
+     """List all offers with pagination and metadata"""
+     return paginated_get("offers", pagination)
 
 
 @router.get("/{offer_id}")
 def get_offer(offer_id: int):
-   """Get details of a specific offer by ID"""
-   return gh_get("offers/{offer_id}")
+     """Get details of a specific offer by ID"""
+     return gh_get("offers/{offer_id}")
