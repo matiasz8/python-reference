@@ -3,7 +3,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: ${file(sls/envs/config.${sls:stage}.yml):s3_bucket_name}
+      BucketName: ${self:service}${sls:stage}programs
       CorsConfiguration:
         CorsRules:
           - AllowedHeaders:
@@ -40,4 +40,3 @@ Outputs:
     Description: S3 bucket for programs
     Export:
       Name: ${self:service}-${sls:stage}-programs-s3-bucket
-

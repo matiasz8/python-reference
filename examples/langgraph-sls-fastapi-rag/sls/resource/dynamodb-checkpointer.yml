@@ -2,9 +2,9 @@ Resources:
   DynamoDBAccessPolicy:
     Type: AWS::IAM::Policy
     Properties:
-      PolicyName: ${self:service}-${sls:stage}-dynamodb-access
+      PolicyName: ${self:service}${sls:stage}dynamodbaccess
       PolicyDocument:
-        Version: '2012-10-17'
+        Version: "2012-10-17"
         Statement:
           - Effect: Allow
             Action:
@@ -34,4 +34,3 @@ Resources:
         PointInTimeRecoveryEnabled: true
       SSESpecification:
         SSEEnabled: true
-

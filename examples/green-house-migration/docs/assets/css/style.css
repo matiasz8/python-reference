@@ -93,14 +93,27 @@ body {
   border: 1px solid #e1e4e8;
 }
 
-h3 {
-  font-size: 1.25rem;
-}
-
 .sidebar-content h3 {
   margin-bottom: 1rem;
   color: #24292e;
   font-size: 1.1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .sidebar-menu {
@@ -255,19 +268,7 @@ ol {
   padding-left: 2rem;
 }
 
-li {
-  margin-bottom: 0.25rem;
-}
-
 /* Links */
-a {
-  color: #0366d6;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
 
 /* Buttons */
 .btn {

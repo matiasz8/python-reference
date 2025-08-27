@@ -15,8 +15,8 @@ setup(
    author=', '.join(["mnq78"]),
    author_email=', '.join(["matias.quiroga@nan-labs.com"]),
    entry_points='''
-     [console_scripts]
-     pycmd=app:start
+   [console_scripts]
+   pycmd=app:start
    ''',
    description="Developer tool CLI base.",
 )
