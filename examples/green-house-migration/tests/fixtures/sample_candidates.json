@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "first_name": "John",
+    "last_name": "Brown",
+    "company": "Innovation Inc",
+    "title": "Software Engineer",
+    "created_at": "2025-03-24T00:49:06.458309",
+    "updated_at": "2025-08-14T00:49:06.458355",
+    "email": "candidate1@example.com",
+    "phone": "+1-555-735-2327"
+  },
+  {
+    "id": 2,
+    "first_name": "Tom",
+    "last_name": "Garcia",
+    "company": "Startup Co",
+    "title": "Software Engineer",
+    "created_at": "2025-02-12T00:49:06.458407",
+    "updated_at": "2025-08-14T00:49:06.458416",
+    "email": "candidate2@example.com",
+    "phone": "+1-555-444-4605"
+  },
+  {
+    "id": 3,
+    "first_name": "Mike",
+    "last_name": "Smith",
+    "company": "Tech Corp",
+    "title": "UX Designer",
+    "created_at": "2025-04-06T00:49:06.458426",
+    "updated_at": "2025-08-14T00:49:06.458459",
+    "email": "candidate3@example.com",
+    "phone": "+1-555-719-7929"
+  },
+  {
+    "id": 4,
+    "first_name": "John",
+    "last_name": "Williams",
+    "company": "Innovation Inc",
+    "title": "Data Scientist",
+    "created_at": "2024-09-21T00:49:06.458468",
+    "updated_at": "2025-08-14T00:49:06.458472",
+    "email": "candidate4@example.com",
+    "phone": "+1-555-128-5693"
+  },
+  {
+    "id": 5,
+    "first_name": "Tom",
+    "last_name": "Garcia",
+    "company": "Startup Co",
+    "title": "Software Engineer",
+    "created_at": "2025-05-12T00:49:06.458478",
+    "updated_at": "2025-08-14T00:49:06.458481",
+    "email": "candidate5@example.com",
+    "phone": "+1-555-136-1194"
+  },
+  {
+    "id": 6,
+    "first_name": "Tom",
+    "last_name": "Brown",
+    "company": "Innovation Inc",
+    "title": "Product Manager",
+    "created_at": "2025-08-12T00:49:06.458488",
+    "updated_at": "2025-08-14T00:49:06.458491",
+    "email": "candidate6@example.com",
+    "phone": "+1-555-555-4510"
+  },
+  {
+    "id": 7,
+    "first_name": "Sarah",
+    "last_name": "Johnson",
+    "company": "Tech Corp",
+    "title": "Software Engineer",
+    "created_at": "2025-01-26T00:49:06.458496",
+    "updated_at": "2025-08-14T00:49:06.458499",
+    "email": "candidate7@example.com",
+    "phone": "+1-555-873-7037"
+  },
+  {
+    "id": 8,
+    "first_name": "Tom",
+    "last_name": "Johnson",
+    "company": "Tech Corp",
+    "title": "Software Engineer",
+    "created_at": "2025-01-07T00:49:06.458504",
+    "updated_at": "2025-08-14T00:49:06.458508",
+    "email": "candidate8@example.com",
+    "phone": "+1-555-421-6029"
+  },
+  {
+    "id": 9,
+    "first_name": "John",
+    "last_name": "Garcia",
+    "company": "Startup Co",
+    "title": "Software Engineer",
+    "created_at": "2025-05-18T00:49:06.458513",
+    "updated_at": "2025-08-14T00:49:06.458516",
+    "email": "candidate9@example.com",
+    "phone": "+1-555-579-2821"
+  },
+  {
+    "id": 10,
+    "first_name": "Mike",
+    "last_name": "Brown",
+    "company": "Enterprise Ltd",
+    "title": "Product Manager",
+    "created_at": "2024-11-15T00:49:06.458528",
+    "updated_at": "2025-08-14T00:49:06.458532",
+    "email": "candidate10@example.com",
+    "phone": "+1-555-629-7362"
+  }
+]

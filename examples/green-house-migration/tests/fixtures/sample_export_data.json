@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "generated_at": "2025-08-14T00:49:06.459060Z",
+    "source": "Greenhouse",
+    "target": "TeamTailor",
+    "version": 1
+  },
+  "jobs": [
+    {
+      "external_id": "gh_job_123",
+      "title": "Software Engineer",
+      "status": "open",
+      "location": "Remote",
+      "work_model": "remote",
+      "description_html": "<p>We are looking for a talented Software Engineer...</p>",
+      "opened_at": "2023-01-01T00:00:00Z",
+      "closed_at": null,
+      "hiring_team": {
+        "hiring_managers": ["John Manager"],
+        "recruiters": ["Jane Recruiter"]
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "external_id": "gh_candidate_456",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1-555-123-4567",
+      "created_at": "2023-01-01T00:00:00Z",
+      "updated_at": "2023-01-01T00:00:00Z"
+    }
+  ],
+  "applications": [
+    {
+      "external_id": "gh_application_789",
+      "candidate_external_id": "gh_candidate_456",
+      "job_external_id": "gh_job_123",
+      "status": "new",
+      "created_at": "2023-01-01T00:00:00Z",
+      "updated_at": "2023-01-01T00:00:00Z"
+    }
+  ]
+}

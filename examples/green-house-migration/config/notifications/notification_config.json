@@ -1,0 +1,30 @@
+{
+  "email": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "",
+    "password": "",
+    "from_email": ""
+  },
+  "slack": {
+    "enabled": false,
+    "webhook_url": "",
+    "channel": "#general"
+  },
+  "teams": {
+    "enabled": false,
+    "webhook_url": ""
+  },
+  "sms": {
+    "enabled": false,
+    "provider": "twilio",
+    "account_sid": "",
+    "auth_token": "",
+    "from_number": ""
+  },
+  "webhooks": {
+    "enabled": false,
+    "endpoints": []
+  }
+}

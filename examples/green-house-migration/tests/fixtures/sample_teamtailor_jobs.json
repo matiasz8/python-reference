@@ -1,0 +1,62 @@
+[
+  {
+    "data": {
+      "id": "1",
+      "type": "jobs",
+      "attributes": {
+        "title": "Data Scientist",
+        "status": "open",
+        "created-at": "2024-11-16T00:49:06.458853",
+        "updated-at": "2025-08-14T00:49:06.458859"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "2",
+      "type": "jobs",
+      "attributes": {
+        "title": "DevOps Engineer",
+        "status": "closed",
+        "created-at": "2025-04-07T00:49:06.458865",
+        "updated-at": "2025-08-14T00:49:06.458869"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "3",
+      "type": "jobs",
+      "attributes": {
+        "title": "UX Designer",
+        "status": "open",
+        "created-at": "2024-08-17T00:49:06.458873",
+        "updated-at": "2025-08-14T00:49:06.458883"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "4",
+      "type": "jobs",
+      "attributes": {
+        "title": "Product Manager",
+        "status": "draft",
+        "created-at": "2024-11-30T00:49:06.458887",
+        "updated-at": "2025-08-14T00:49:06.458893"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "5",
+      "type": "jobs",
+      "attributes": {
+        "title": "UX Designer",
+        "status": "closed",
+        "created-at": "2025-05-28T00:49:06.458896",
+        "updated-at": "2025-08-14T00:49:06.458900"
+      }
+    }
+  }
+]

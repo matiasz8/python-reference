@@ -1,0 +1,27 @@
+[
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/v1/candidates"
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/vnd.api+json"]
+      },
+      "body": {
+        "data": [
+          {
+            "id": "1",
+            "type": "candidates",
+            "attributes": {
+              "first-name": "John",
+              "last-name": "Doe",
+              "email": "john.doe@example.com"
+            }
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,377 @@
+[
+  {
+    "data": {
+      "id": "1",
+      "type": "applications",
+      "attributes": {
+        "status": "rejected",
+        "created-at": "2024-11-13T00:49:06.458905",
+        "updated-at": "2025-08-14T00:49:06.458908"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "10",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "1",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "2",
+      "type": "applications",
+      "attributes": {
+        "status": "in-progress",
+        "created-at": "2025-06-11T00:49:06.458918",
+        "updated-at": "2025-08-14T00:49:06.458923"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "4",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "4",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "3",
+      "type": "applications",
+      "attributes": {
+        "status": "new",
+        "created-at": "2025-07-10T00:49:06.458929",
+        "updated-at": "2025-08-14T00:49:06.458933"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "9",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "5",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "4",
+      "type": "applications",
+      "attributes": {
+        "status": "rejected",
+        "created-at": "2024-12-06T00:49:06.458938",
+        "updated-at": "2025-08-14T00:49:06.458942"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "6",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "4",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "5",
+      "type": "applications",
+      "attributes": {
+        "status": "new",
+        "created-at": "2025-01-02T00:49:06.458951",
+        "updated-at": "2025-08-14T00:49:06.458955"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "10",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "3",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "6",
+      "type": "applications",
+      "attributes": {
+        "status": "new",
+        "created-at": "2025-04-17T00:49:06.458960",
+        "updated-at": "2025-08-14T00:49:06.458964"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "1",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "3",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "7",
+      "type": "applications",
+      "attributes": {
+        "status": "completed",
+        "created-at": "2024-11-10T00:49:06.458969",
+        "updated-at": "2025-08-14T00:49:06.458972"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "5",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "3",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "8",
+      "type": "applications",
+      "attributes": {
+        "status": "in-progress",
+        "created-at": "2025-07-16T00:49:06.458980",
+        "updated-at": "2025-08-14T00:49:06.458987"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "5",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "5",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "9",
+      "type": "applications",
+      "attributes": {
+        "status": "rejected",
+        "created-at": "2025-08-02T00:49:06.458995",
+        "updated-at": "2025-08-14T00:49:06.458999"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "2",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "2",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "10",
+      "type": "applications",
+      "attributes": {
+        "status": "in-progress",
+        "created-at": "2025-02-09T00:49:06.459003",
+        "updated-at": "2025-08-14T00:49:06.459007"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "10",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "4",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "11",
+      "type": "applications",
+      "attributes": {
+        "status": "completed",
+        "created-at": "2025-01-20T00:49:06.459011",
+        "updated-at": "2025-08-14T00:49:06.459014"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "5",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "5",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "12",
+      "type": "applications",
+      "attributes": {
+        "status": "rejected",
+        "created-at": "2024-09-05T00:49:06.459020",
+        "updated-at": "2025-08-14T00:49:06.459027"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "2",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "5",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "13",
+      "type": "applications",
+      "attributes": {
+        "status": "completed",
+        "created-at": "2024-11-11T00:49:06.459032",
+        "updated-at": "2025-08-14T00:49:06.459036"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "10",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "5",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "14",
+      "type": "applications",
+      "attributes": {
+        "status": "new",
+        "created-at": "2024-08-30T00:49:06.459041",
+        "updated-at": "2025-08-14T00:49:06.459044"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "1",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "5",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "15",
+      "type": "applications",
+      "attributes": {
+        "status": "completed",
+        "created-at": "2024-08-17T00:49:06.459049",
+        "updated-at": "2025-08-14T00:49:06.459052"
+      },
+      "relationships": {
+        "candidate": {
+          "data": {
+            "id": "1",
+            "type": "candidates"
+          }
+        },
+        "job": {
+          "data": {
+            "id": "4",
+            "type": "jobs"
+          }
+        }
+      }
+    }
+  }
+]

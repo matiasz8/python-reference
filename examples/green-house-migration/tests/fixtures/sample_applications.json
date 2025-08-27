@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "candidate_id": 10,
+    "job_id": 4,
+    "status": "active",
+    "created_at": "2025-08-05T00:49:06.458545",
+    "updated_at": "2025-08-14T00:49:06.458549",
+    "source": "Referral"
+  },
+  {
+    "id": 2,
+    "candidate_id": 6,
+    "job_id": 1,
+    "status": "hired",
+    "created_at": "2025-02-15T00:49:06.458557",
+    "updated_at": "2025-08-14T00:49:06.458562",
+    "source": "Indeed"
+  },
+  {
+    "id": 3,
+    "candidate_id": 5,
+    "job_id": 1,
+    "status": "active",
+    "created_at": "2025-04-30T00:49:06.458568",
+    "updated_at": "2025-08-14T00:49:06.458572",
+    "source": "Company Website"
+  },
+  {
+    "id": 4,
+    "candidate_id": 6,
+    "job_id": 5,
+    "status": "rejected",
+    "created_at": "2025-07-20T00:49:06.458577",
+    "updated_at": "2025-08-14T00:49:06.458580",
+    "source": "Company Website"
+  },
+  {
+    "id": 5,
+    "candidate_id": 8,
+    "job_id": 3,
+    "status": "active",
+    "created_at": "2025-04-06T00:49:06.458584",
+    "updated_at": "2025-08-14T00:49:06.458588",
+    "source": "Indeed"
+  },
+  {
+    "id": 6,
+    "candidate_id": 9,
+    "job_id": 2,
+    "status": "hired",
+    "created_at": "2025-03-20T00:49:06.458593",
+    "updated_at": "2025-08-14T00:49:06.458596",
+    "source": "LinkedIn"
+  },
+  {
+    "id": 7,
+    "candidate_id": 4,
+    "job_id": 4,
+    "status": "rejected",
+    "created_at": "2025-01-31T00:49:06.458600",
+    "updated_at": "2025-08-14T00:49:06.458603",
+    "source": "LinkedIn"
+  },
+  {
+    "id": 8,
+    "candidate_id": 5,
+    "job_id": 2,
+    "status": "active",
+    "created_at": "2024-12-12T00:49:06.458607",
+    "updated_at": "2025-08-14T00:49:06.458611",
+    "source": "LinkedIn"
+  },
+  {
+    "id": 9,
+    "candidate_id": 8,
+    "job_id": 2,
+    "status": "withdrawn",
+    "created_at": "2025-07-10T00:49:06.458614",
+    "updated_at": "2025-08-14T00:49:06.458617",
+    "source": "Referral"
+  },
+  {
+    "id": 10,
+    "candidate_id": 3,
+    "job_id": 3,
+    "status": "active",
+    "created_at": "2025-05-28T00:49:06.458621",
+    "updated_at": "2025-08-14T00:49:06.458625",
+    "source": "Company Website"
+  },
+  {
+    "id": 11,
+    "candidate_id": 8,
+    "job_id": 5,
+    "status": "hired",
+    "created_at": "2025-01-30T00:49:06.458629",
+    "updated_at": "2025-08-14T00:49:06.458632",
+    "source": "Referral"
+  },
+  {
+    "id": 12,
+    "candidate_id": 9,
+    "job_id": 1,
+    "status": "active",
+    "created_at": "2025-07-07T00:49:06.458636",
+    "updated_at": "2025-08-14T00:49:06.458639",
+    "source": "LinkedIn"
+  },
+  {
+    "id": 13,
+    "candidate_id": 3,
+    "job_id": 1,
+    "status": "withdrawn",
+    "created_at": "2025-08-11T00:49:06.458644",
+    "updated_at": "2025-08-14T00:49:06.458651",
+    "source": "Company Website"
+  },
+  {
+    "id": 14,
+    "candidate_id": 2,
+    "job_id": 4,
+    "status": "rejected",
+    "created_at": "2024-12-14T00:49:06.458655",
+    "updated_at": "2025-08-14T00:49:06.458659",
+    "source": "Referral"
+  },
+  {
+    "id": 15,
+    "candidate_id": 7,
+    "job_id": 3,
+    "status": "active",
+    "created_at": "2025-06-05T00:49:06.458663",
+    "updated_at": "2025-08-14T00:49:06.458667",
+    "source": "Referral"
+  },
+  {
+    "id": 16,
+    "candidate_id": 9,
+    "job_id": 1,
+    "status": "hired",
+    "created_at": "2025-04-22T00:49:06.458671",
+    "updated_at": "2025-08-14T00:49:06.458674",
+    "source": "Indeed"
+  },
+  {
+    "id": 17,
+    "candidate_id": 7,
+    "job_id": 3,
+    "status": "withdrawn",
+    "created_at": "2025-03-23T00:49:06.458678",
+    "updated_at": "2025-08-14T00:49:06.458683",
+    "source": "Indeed"
+  },
+  {
+    "id": 18,
+    "candidate_id": 2,
+    "job_id": 4,
+    "status": "hired",
+    "created_at": "2024-11-07T00:49:06.458705",
+    "updated_at": "2025-08-14T00:49:06.458709",
+    "source": "Referral"
+  },
+  {
+    "id": 19,
+    "candidate_id": 7,
+    "job_id": 5,
+    "status": "hired",
+    "created_at": "2025-05-04T00:49:06.458714",
+    "updated_at": "2025-08-14T00:49:06.458716",
+    "source": "Indeed"
+  },
+  {
+    "id": 20,
+    "candidate_id": 2,
+    "job_id": 2,
+    "status": "active",
+    "created_at": "2025-07-24T00:49:06.458723",
+    "updated_at": "2025-08-14T00:49:06.458727",
+    "source": "Company Website"
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "data": {
+      "id": "1",
+      "type": "candidates",
+      "attributes": {
+        "first-name": "Tom",
+        "last-name": "Brown",
+        "email": "candidate1@example.com",
+        "phone": "+1-555-198-8541",
+        "created-at": "2024-08-31T00:49:06.458742",
+        "updated-at": "2025-08-14T00:49:06.458748"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "2",
+      "type": "candidates",
+      "attributes": {
+        "first-name": "David",
+        "last-name": "Smith",
+        "email": "candidate2@example.com",
+        "phone": "+1-555-957-4967",
+        "created-at": "2024-11-20T00:49:06.458759",
+        "updated-at": "2025-08-14T00:49:06.458764"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "3",
+      "type": "candidates",
+      "attributes": {
+        "first-name": "Emma",
+        "last-name": "Smith",
+        "email": "candidate3@example.com",
+        "phone": "+1-555-339-7695",
+        "created-at": "2025-06-22T00:49:06.458770",
+        "updated-at": "2025-08-14T00:49:06.458775"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "4",
+      "type": "candidates",
+      "attributes": {
+        "first-name": "Lisa",
+        "last-name": "Garcia",
+        "email": "candidate4@example.com",
+        "phone": "+1-555-555-4867",
+        "created-at": "2025-04-28T00:49:06.458782",
+        "updated-at": "2025-08-14T00:49:06.458786"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "5",
+      "type": "candidates",
+      "attributes": {
+        "first-name": "Emma",
+        "last-name": "Miller",
+        "email": "candidate5@example.com",
+        "phone": "+1-555-319-1058",
+        "created-at": "2025-01-31T00:49:06.458790",
+        "updated-at": "2025-08-14T00:49:06.458794"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "6",
+      "type": "candidates",
+      "attributes": {
+        "first-name": "David",
+        "last-name": "Jones",
+        "email": "candidate6@example.com",
+        "phone": "+1-555-259-7409",
+        "created-at": "2024-11-22T00:49:06.458801",
+        "updated-at": "2025-08-14T00:49:06.458805"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "7",
+      "type": "candidates",
+      "attributes": {
+        "first-name": "Jane",
+        "last-name": "Williams",
+        "email": "candidate7@example.com",
+        "phone": "+1-555-819-6415",
+        "created-at": "2025-04-11T00:49:06.458811",
+        "updated-at": "2025-08-14T00:49:06.458815"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "8",
+      "type": "candidates",
+      "attributes": {
+        "first-name": "Emma",
+        "last-name": "Smith",
+        "email": "candidate8@example.com",
+        "phone": "+1-555-508-7895",
+        "created-at": "2024-12-24T00:49:06.458821",
+        "updated-at": "2025-08-14T00:49:06.458824"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "9",
+      "type": "candidates",
+      "attributes": {
+        "first-name": "Mike",
+        "last-name": "Johnson",
+        "email": "candidate9@example.com",
+        "phone": "+1-555-490-8912",
+        "created-at": "2024-12-18T00:49:06.458830",
+        "updated-at": "2025-08-14T00:49:06.458833"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "10",
+      "type": "candidates",
+      "attributes": {
+        "first-name": "Sarah",
+        "last-name": "Jones",
+        "email": "candidate10@example.com",
+        "phone": "+1-555-903-2799",
+        "created-at": "2024-12-18T00:49:06.458839",
+        "updated-at": "2025-08-14T00:49:06.458843"
+      }
+    }
+  }
+]

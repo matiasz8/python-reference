@@ -1,0 +1,84 @@
+# Snyk configuration file
+# This file configures Snyk security scanning for the Greenhouse to TeamTailor migration project
+
+version: v1.25.0
+ignore:
+  # Ignore specific vulnerabilities that are false positives or acceptable risks
+  # Format: <vulnerability_id>:
+  #   - <path_to_vulnerable_file>:
+  #       reason: <reason_for_ignoring>
+  #       expires: <expiration_date>
+
+  # Example: Ignore a specific vulnerability in test files
+  # 'SNYK-PYTHON-REQUESTS-1061915':
+  #   - 'tests/fixtures/*':
+  #       reason: 'Test data only, not used in production'
+  #       expires: 2024-12-31T00:00:00.000Z
+
+# Policy for different severity levels
+policy:
+  # High severity vulnerabilities should be fixed immediately
+  high:
+    action: fail
+    message: "High severity vulnerabilities found. Please fix before deployment."
+
+  # Medium severity vulnerabilities should be reviewed
+  medium:
+    action: warn
+    message: "Medium severity vulnerabilities found. Review and fix when possible."
+
+  # Low severity vulnerabilities are informational
+  low:
+    action: info
+    message: "Low severity vulnerabilities found. Consider fixing in future updates."
+
+# Custom rules for the project
+rules:
+  # Allow specific patterns in test files
+  - name: "Allow test data patterns"
+    pattern: "tests/**/*"
+    severity: low
+    message: "Test files may contain intentionally vulnerable patterns for testing purposes"
+
+  # Allow specific patterns in mock data
+  - name: "Allow mock data patterns"
+    pattern: "scripts/development/generate_mock_data.py"
+    severity: low
+    message: "Mock data generation may contain test patterns"
+
+# Exclude specific directories from scanning
+exclude:
+  - "data/" # Exclude data directory as it contains exported data
+  - "logs/" # Exclude logs directory
+  - "node_modules/" # Exclude node_modules if any
+  - ".venv/" # Exclude virtual environment
+  - "__pycache__/" # Exclude Python cache
+  - "*.pyc" # Exclude compiled Python files
+
+# Custom security policies for TeamTailor integration
+teamtailor:
+  # Ensure API tokens are not hardcoded
+  - rule: "no-hardcoded-tokens"
+    pattern: '.*token.*=.*[''"][^''"]*[''"]'
+    severity: high
+    message: "API tokens should not be hardcoded in source code"
+
+  # Ensure proper rate limiting
+  - rule: "rate-limiting-check"
+    pattern: "time.sleep\\([0-9]*\\.?[0-9]*\\)"
+    severity: medium
+    message: "Ensure proper rate limiting is implemented for API calls"
+
+# Docker security policies
+docker:
+  # Ensure base images are from trusted sources
+  - rule: "trusted-base-image"
+    pattern: "FROM (alpine|python|node):[0-9]+\\.[0-9]+"
+    severity: medium
+    message: "Use specific version tags for base images"
+
+  # Ensure no secrets in Dockerfile
+  - rule: "no-secrets-in-dockerfile"
+    pattern: '(ENV|ARG).*TOKEN.*=.*[''"][^''"]*[''"]'
+    severity: high
+    message: "Do not hardcode secrets in Dockerfile"

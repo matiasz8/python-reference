@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+requests = "*"
+python-dotenv = "*"
+tqdm = "*"
+types-requests = "*"
+pydantic = "*"
+pandas = "*"
+openpyxl = "*"
+
+[dev-packages]
+black = "==25.1.0"
+isort = "==6.0.1"
+mypy = "==1.17.1"
+pylint = "==3.3.8"
+flake8 = "==7.3.0"
+flake8-bugbear = "==24.12.12"
+pytest = "*"
+pytest-cov = "*"
+pre-commit = "*"
+bandit = "*"
+httpx = "*"
+
+[requires]
+python_version = "3.12"

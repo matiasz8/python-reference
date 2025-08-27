@@ -1,0 +1,6 @@
+email,first_name,last_name,role,department,status
+john.doe@company.com,John,Doe,recruiter,HR,active
+jane.smith@company.com,Jane,Smith,hiring_manager,Marketing,active
+mike.johnson@company.com,Mike,Johnson,admin,IT,active
+sarah.wilson@company.com,Sarah,Wilson,recruiter,Operations,active
+david.brown@company.com,David,Brown,hiring_manager,Technology,active
