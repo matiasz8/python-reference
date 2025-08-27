@@ -11,9 +11,8 @@ from app.index_graph.state import IndexState
 
 logger = logging.getLogger(__name__)
 
-async def index_docs(
-    state: IndexState, *, config: Optional[RunnableConfig] = None
-) -> IndexState:
+
+async def index_docs(state: IndexState, *, config: Optional[RunnableConfig] = None) -> IndexState:
     """Index the documents in the state."""
     if not config:
         raise ValueError("Configuration required to run index_docs.")
@@ -36,15 +35,16 @@ async def fetch_s3_content(
     """Fetch content from S3."""
 
     bucket_name = os.environ["S3_BUCKET_NAME"]
-    service = S3CSVReader(
-        bucket_name,
-        prefix="/"
-    )
+    service = S3CSVReader(bucket_name, prefix="/")
     logger.info(f"Fetching content from S3 bucket '{bucket_name}'")
     file_contents = service.read_all_csv_files()
-    base_metadata = {
-        "source": "s3"
-    }
-    docs = [Document(page_content=row['content'], metadata={ **base_metadata, 'title': row['title'], 'created_at': row['created']}) for row in file_contents]
+    base_metadata = {"source": "s3"}
+    docs = [
+        Document(
+            page_content=row["content"],
+            metadata={**base_metadata, "title": row["title"], "created_at": row["created"]},
+        )
+        for row in file_contents
+    ]
     logger.info(f"Successfully processed {len(docs)} S3 documents")
     return {"docs": docs}

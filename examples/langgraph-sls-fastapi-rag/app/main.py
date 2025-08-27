@@ -17,6 +17,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.middleware("http")
 async def add_time_elapsed(request: Request, call_next) -> Response:  # type: ignore
     start_time = time()

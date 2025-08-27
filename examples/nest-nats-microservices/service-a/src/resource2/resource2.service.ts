@@ -6,7 +6,7 @@ import { CreateResource2Dto } from './dto/create-resource2.dto';
 export class Resource2Service {
   constructor(@Inject('NATS') private readonly natsClient: ClientProxy) {}
 
-  create(createResource2Dto: CreateResource2Dto) {
+  create(_createResource2Dto: CreateResource2Dto) {
     return 'This action adds a new resource2';
   }
 

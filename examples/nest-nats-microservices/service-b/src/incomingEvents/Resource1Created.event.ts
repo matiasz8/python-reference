@@ -25,7 +25,7 @@ const eventSchema = Joi.object({
 }).unknown(true);
 
 export class Resource1CreatedValidationPipe implements PipeTransform {
-  transform(value: Resource1Created, metadata: ArgumentMetadata) {
+  transform(value: Resource1Created, _metadata: ArgumentMetadata) {
     const result = eventSchema.validate(value);
     if (result.error) {
       console.log('invalid payload', value);

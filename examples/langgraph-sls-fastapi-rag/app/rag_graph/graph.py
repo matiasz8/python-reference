@@ -5,8 +5,9 @@ retrieval graph. It includes the main graph definition, state management,
 and key functions for processing user inputs, generating queries, retrieving
 relevant documents, and formulating responses.
 """
-import sys
+
 import os
+import sys
 
 venv_path = sys.prefix
 venv_name = os.path.basename(venv_path)
@@ -16,7 +17,8 @@ print(f"Active virtual environment: {venv_name}")
 import os
 
 from langgraph.graph import StateGraph
-from langgraph_checkpoint_dynamodb import DynamoDBSaver, DynamoDBConfig, DynamoDBTableConfig
+from langgraph_checkpoint_dynamodb import DynamoDBConfig, DynamoDBSaver, DynamoDBTableConfig
+
 from app.rag_graph.configuration import Configuration
 from app.rag_graph.nodes import create_query, respond, retrieve, web_search
 from app.rag_graph.state import State
@@ -24,16 +26,17 @@ from app.rag_graph.state import State
 
 def create_checkpointer():
     """Factory function to create a DynamoDB checkpointer singleton."""
-    checkpoints_table_name = os.environ.get('CHECKPOINT_TABLE_NAME',None)
+    checkpoints_table_name = os.environ.get("CHECKPOINT_TABLE_NAME", None)
     if not checkpoints_table_name:
         raise ValueError("CHECKPOINT_TABLE_NAME environment variable must be set")
-    
+
     config = DynamoDBConfig(
         table_config=DynamoDBTableConfig(
             table_name=checkpoints_table_name,
         ),
     )
     return DynamoDBSaver(config=config)
+
 
 def create_graph():
     builder = StateGraph(State, input=State, config_schema=Configuration)
@@ -51,7 +54,7 @@ def create_graph():
     # Use the factory to create the checkpointer
     checkpointer = create_checkpointer()
 
-    #print the graph image
+    # print the graph image
     graph = builder.compile(
         checkpointer=checkpointer,
         interrupt_before=[],  # if you want to update the state before calling the tools

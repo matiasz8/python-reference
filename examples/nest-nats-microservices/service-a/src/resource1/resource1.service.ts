@@ -29,7 +29,7 @@ export class Resource1Service {
     return `This action returns a #${id} resource1`;
   }
 
-  update(id: string, updateResource1Dto: UpdateResource1Dto) {
+  update(id: string, _updateResource1Dto: UpdateResource1Dto) {
     return `This action updates a #${id} resource1`;
   }
 

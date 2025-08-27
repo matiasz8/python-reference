@@ -10,7 +10,7 @@ from langchain_core.runnables import RunnableConfig, ensure_config
 from . import prompts
 
 
-#TODO: rename to RAGConfiguration
+# TODO: rename to RAGConfiguration
 @dataclass(kw_only=True)
 class IndexConfiguration:
     """Configuration class for indexing and retrieval operations.
@@ -22,7 +22,7 @@ class IndexConfiguration:
 
     user_id: str = field(metadata={"description": "Unique identifier for the user."})
 
-    # add 
+    # add
     embedding_model: Annotated[
         str,
         {"__template_metadata__": {"kind": "embeddings"}},
@@ -51,9 +51,7 @@ class IndexConfiguration:
     )
 
     @classmethod
-    def from_runnable_config(
-        cls: Type[T], config: Optional[RunnableConfig] = None
-    ) -> T:
+    def from_runnable_config(cls: Type[T], config: Optional[RunnableConfig] = None) -> T:
         """Create an IndexConfiguration instance from a RunnableConfig object.
 
         Args:
@@ -82,7 +80,7 @@ class Configuration(IndexConfiguration):
     )
 
     response_model: Annotated[str, {"__template_metadata__": {"kind": "llm"}}] = field(
-        #default="anthropic/claude-3-5-sonnet-20240620",
+        # default="anthropic/claude-3-5-sonnet-20240620",
         default="openai/gpt-4o-mini",
         metadata={
             "description": "The language model used for generating responses. Should be in the form: provider/model-name."
@@ -91,13 +89,11 @@ class Configuration(IndexConfiguration):
 
     query_system_prompt: str = field(
         default=prompts.QUERY_SYSTEM_PROMPT,
-        metadata={
-            "description": "The system prompt used for processing and refining queries."
-        },
+        metadata={"description": "The system prompt used for processing and refining queries."},
     )
 
     query_model: Annotated[str, {"__template_metadata__": {"kind": "llm"}}] = field(
-        #default="anthropic/claude-3-haiku-20240307",
+        # default="anthropic/claude-3-haiku-20240307",
         default="openai/gpt-4o-mini",
         metadata={
             "description": "The language model used for processing and refining queries. Should be in the form: provider/model-name."

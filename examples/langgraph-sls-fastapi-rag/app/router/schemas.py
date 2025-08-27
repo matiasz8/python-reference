@@ -48,10 +48,9 @@ class BaseFilters(PydanticBaseModel):
         return filters
 
 
-
-
 class StatusResponse(BaseModel):
     data: list[Document]
+
 
 class WebSearchResult(BaseModel):
     title: str
@@ -59,10 +58,12 @@ class WebSearchResult(BaseModel):
     content: str
     score: float
 
+
 class RetrieveResponse(BaseModel):
     messages: Annotated[Sequence[AnyMessage], add_messages]
     retrieved_docs: list[Document]
     web_search_results: list[WebSearchResult]
+
 
 class DocumentMetadata(BaseModel):
     source: str

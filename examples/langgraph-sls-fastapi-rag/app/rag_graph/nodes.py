@@ -15,18 +15,16 @@ from .configuration import Configuration
 from .retrieval import make_retriever
 from .tools import create_web_search_tool
 
-
 logger = logging.getLogger(__name__)
 
-async def create_query(
-    state: State, *, config: RunnableConfig
-) -> dict[str, list[str]]:
+
+async def create_query(state: State, *, config: RunnableConfig) -> dict[str, list[str]]:
     """Extract the latest message from the state and format it into a query.
-    
+
     Args:
         state (State): The current state containing messages.
         config (RunnableConfig): Configuration for the query creation process.
-        
+
     Returns:
         dict[str, list[str]]: A dictionary with a single key "queries" containing the query.
     """
@@ -38,9 +36,7 @@ async def create_query(
     return {"queries": [query]}
 
 
-async def retrieve(
-    state: State, *, config: RunnableConfig
-) -> dict[str, list[Document]]:
+async def retrieve(state: State, *, config: RunnableConfig) -> dict[str, list[Document]]:
     """Retrieve documents based on the latest query in the state.
 
     This function takes the current state and configuration, uses the latest query
@@ -63,9 +59,7 @@ async def retrieve(
         return {"retrieved_docs": response}
 
 
-def web_search(
-    state: State, *, config: RunnableConfig
-) -> dict[str, list[str]]:
+def web_search(state: State, *, config: RunnableConfig) -> dict[str, list[str]]:
     """
     Web search based on the re-phrased question.
 
@@ -92,9 +86,8 @@ def web_search(
     logging.debug("Web search results obtained: %s", docs)
     return {"web_search_results": docs}
 
-async def respond(
-    state: State, *, config: RunnableConfig
-) -> dict[str, list[BaseMessage]]:
+
+async def respond(state: State, *, config: RunnableConfig) -> dict[str, list[BaseMessage]]:
     """Call the LLM powering our "agent"."""
     configuration = Configuration.from_runnable_config(config)
     # Feel free to customize the prompt, model, and other logic!
@@ -108,7 +101,8 @@ async def respond(
     llm = ChatBedrock(
         model_id="anthropic.claude-3-sonnet-20240229-v1:0",
         region_name=os.environ.get("AWS_REGION", "us-west-2"),
-        model_kwargs=dict(temperature=0))
+        model_kwargs=dict(temperature=0),
+    )
 
     retrieved_docs = format_docs(state.retrieved_docs)
     message_value = await prompt.ainvoke(
@@ -122,7 +116,11 @@ async def respond(
     )
     response = await llm.ainvoke(message_value, config)
     # We return a list, because this will get added to the existing list
-    logger.info(f'response: {response}')
-    logger.info(f'retrieved_docs: {state.retrieved_docs}')
-    logger.info(f'web_search_results: {state.web_search_results}')
-    return {"messages": [response], "retrieved_docs": state.retrieved_docs, "web_search_results": state.web_search_results}
+    logger.info(f"response: {response}")
+    logger.info(f"retrieved_docs: {state.retrieved_docs}")
+    logger.info(f"web_search_results: {state.web_search_results}")
+    return {
+        "messages": [response],
+        "retrieved_docs": state.retrieved_docs,
+        "web_search_results": state.web_search_results,
+    }

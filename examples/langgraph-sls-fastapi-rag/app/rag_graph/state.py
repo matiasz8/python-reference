@@ -59,9 +59,7 @@ def reduce_docs(
         coerced = []
         for item in new:
             if isinstance(item, str):
-                coerced.append(
-                    Document(page_content=item, metadata={"id": str(uuid.uuid4())})
-                )
+                coerced.append(Document(page_content=item, metadata={"id": str(uuid.uuid4())}))
             elif isinstance(item, dict):
                 coerced.append(Document(**item))
             else:

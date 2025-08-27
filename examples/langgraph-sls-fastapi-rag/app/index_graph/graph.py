@@ -1,10 +1,8 @@
 """This "graph" simply exposes an endpoint for a user to upload docs to be indexed."""
 
-
 from langgraph.graph import StateGraph
 
 from app.index_graph import configuration, nodes, state
-
 
 
 def create_graph():
@@ -20,4 +18,3 @@ def create_graph():
     graph = builder.compile()
     graph.name = "S3IndexGraph"
     return graph
-

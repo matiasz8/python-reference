@@ -18,8 +18,8 @@ class IndexConfiguration:
     """
 
     user_id: str = field(
-        default="user",
-        metadata={"description": "Unique identifier for the user."})
+        default="user", metadata={"description": "Unique identifier for the user."}
+    )
 
     embedding_model: Annotated[
         str,
@@ -50,15 +50,11 @@ class IndexConfiguration:
 
     index_name: str = field(
         default="langgraph-sls-fastapi-rag",
-        metadata={
-            "description": "Name of the index to use for retrieval."
-        }
+        metadata={"description": "Name of the index to use for retrieval."},
     )
-    
+
     @classmethod
-    def from_runnable_config(
-        cls: Type[T], config: Optional[RunnableConfig] = None
-    ) -> T:
+    def from_runnable_config(cls: Type[T], config: Optional[RunnableConfig] = None) -> T:
         """Create an IndexConfiguration instance from a RunnableConfig object.
 
         Args:
